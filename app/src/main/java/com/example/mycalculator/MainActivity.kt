@@ -7,6 +7,10 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var lastNumeric: Boolean = true
+    var lastDot: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,11 +18,20 @@ class MainActivity : AppCompatActivity() {
 
     fun onDigit(view: View) {
         tvInput.append((view as Button).text)
+        lastNumeric = true
     }
-
-    // Challenge 2: COMPLETED implement onClear function when CLR button is pressed.
 
     fun onClear(view: View) {
         tvInput.text = ""
+        lastNumeric = true
+        lastDot = false
+    }
+
+    fun onDecimalPoint(view: View) {
+        if (lastNumeric && !lastDot) {
+            tvInput.append(".")
+            lastNumeric = false
+            lastDot = true
+        }
     }
 }

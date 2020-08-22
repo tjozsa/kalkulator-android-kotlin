@@ -160,16 +160,25 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/btnDecimal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="."
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:onClick="onDecimalPoint"
+                />
+            <Button
                 android:id="@+id/btnZero"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="0"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:onClick="onDigit"
                 />
- <!-- Challenge 2: COMPLETED implement onClear function when CLR button is pressed. -->
             <Button
                 android:id="@+id/btnCLR"
                 android:layout_width="0dp"
