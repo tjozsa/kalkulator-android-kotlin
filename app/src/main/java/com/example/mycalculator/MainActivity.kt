@@ -52,6 +52,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun removeZeroDecimal(value: String) : String {
+        return if(value.endsWith(".0")){
+            value.substring(0, value.length-2)
+        } else {
+            value
+        }
+    }
+
     fun onEqual(view: View){
         if(lastNumeric) {
             var tvValue = tvInput.text.toString()
@@ -68,12 +76,51 @@ class MainActivity : AppCompatActivity() {
 
                     var firstValue = splitValue[0]
                     var secondValue = splitValue[1]
-                    
+
                     if (!prefix.isEmpty()){
                         firstValue = prefix + firstValue
                     }
 
-                    tvInput.text = (firstValue.toDouble() - secondValue.toDouble()).toString()
+                    tvInput.text = removeZeroDecimal((firstValue.toDouble() - secondValue.toDouble()).toString())
+                }
+
+                if(tvValue.contains("+")) {
+                    val splitValue = tvValue.split("+")
+
+                    var firstValue = splitValue[0]
+                    var secondValue = splitValue[1]
+
+                    if (!prefix.isEmpty()){
+                        firstValue = prefix + firstValue
+                    }
+
+                    tvInput.text = removeZeroDecimal((firstValue.toDouble() + secondValue.toDouble()).toString())
+                }
+
+                if(tvValue.contains("*")) {
+                    val splitValue = tvValue.split("*")
+
+                    var firstValue = splitValue[0]
+                    var secondValue = splitValue[1]
+
+                    if (!prefix.isEmpty()){
+                        firstValue = prefix + firstValue
+                    }
+
+                    tvInput.text = removeZeroDecimal((firstValue.toDouble() * secondValue.toDouble()).toString())
+                }
+
+                if(tvValue.contains("/")) {
+                    val splitValue = tvValue.split("/")
+
+                    var firstValue = splitValue[0]
+                    var secondValue = splitValue[1]
+
+                    if (!prefix.isEmpty()){
+                        firstValue = prefix + firstValue
+                    }
+
+                    tvInput.text = removeZeroDecimal((firstValue.toDouble() / secondValue.toDouble()).toString())
                 }
             }catch (e: ArithmeticException){
                 e.printStackTrace()
