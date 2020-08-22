@@ -63,7 +63,8 @@
                 android:text="/"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onOperator"/>
         </LinearLayout>
         <!-- row 2 -->
         <LinearLayout
@@ -106,7 +107,8 @@
                 android:text="*"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onOperator"/>
         </LinearLayout>
         <!-- row 3 -->
         <LinearLayout
@@ -151,7 +153,8 @@
                 android:text="-"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onOperator"/>
         </LinearLayout>
         <!-- row 4 -->
         <LinearLayout
@@ -195,7 +198,8 @@
                 android:text="+"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onOperator"/>
         </LinearLayout>
         <!-- row 5 -->
         <LinearLayout
