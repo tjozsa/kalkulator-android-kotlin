@@ -13,7 +13,6 @@
         android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:text="9*55"
         android:textSize="48sp"
         android:maxLength="12"
         android:gravity="bottom|right"
@@ -170,6 +169,7 @@
                 android:layout_weight="2"
                 android:onClick="onDigit"
                 />
+ <!-- Challenge 2 START: implement onClear function when CLR button is pressed. -->
             <Button
                 android:id="@+id/btnCLR"
                 android:layout_width="0dp"
