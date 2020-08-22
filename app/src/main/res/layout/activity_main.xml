@@ -169,7 +169,7 @@
                 android:layout_weight="2"
                 android:onClick="onDigit"
                 />
- <!-- Challenge 2 START: implement onClear function when CLR button is pressed. -->
+ <!-- Challenge 2: COMPLETED implement onClear function when CLR button is pressed. -->
             <Button
                 android:id="@+id/btnCLR"
                 android:layout_width="0dp"
@@ -177,7 +177,8 @@
                 android:text="CLR"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onClear"/>
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="0dp"

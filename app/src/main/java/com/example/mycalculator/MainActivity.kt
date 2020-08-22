@@ -16,5 +16,9 @@ class MainActivity : AppCompatActivity() {
         tvInput.append((view as Button).text)
     }
 
-    // Challenge 2: START implement onClear function when CLR button is pressed.
+    // Challenge 2: COMPLETED implement onClear function when CLR button is pressed.
+
+    fun onClear(view: View) {
+        tvInput.text = ""
+    }
 }
